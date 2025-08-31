@@ -25,10 +25,12 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button variant="neon" size="lg" className="group">
-                <Download className="mr-2 group-hover:animate-bounce" size={20} />
-                Download Resume
-              </Button>
+              <a href="/resume.pdf" download="Hemalatha_S_Resume.pdf">
+                <Button variant="neon" size="lg" className="group">
+                  <Download className="mr-2 group-hover:animate-bounce" size={20} />
+                  Download Resume
+                </Button>
+              </a>
               <Button variant="glass" size="lg">
                 View My Work
               </Button>
