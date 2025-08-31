@@ -7,10 +7,9 @@ const Skills = () => {
       icon: Code,
       title: "Programming Languages",
       skills: [
-        { name: "JavaScript", level: 75 },
         { name: "Java", level: 75 },
-        { name: "HTML/CSS", level: 85 },
-        { name: "TypeScript", level: 60 }
+        { name: "HTML", level: 85 },
+        { name: "CSS", level: 80 }
       ]
     },
     {
@@ -18,8 +17,6 @@ const Skills = () => {
       title: "Frontend Technologies",
       skills: [
         { name: "React.js", level: 65 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "Responsive Design", level: 85 },
         { name: "UI/UX Design", level: 70 }
       ]
     },
@@ -28,39 +25,7 @@ const Skills = () => {
       title: "Backend & Database",
       skills: [
         { name: "Django", level: 70 },
-        { name: "Node.js", level: 60 },
-        { name: "MySQL", level: 65 },
-        { name: "RESTful APIs", level: 65 }
-      ]
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      skills: [
-        { name: "AWS", level: 70 },
-        { name: "Cloud Computing", level: 75 },
-        { name: "Git/GitHub", level: 80 },
-        { name: "Docker", level: 50 }
-      ]
-    },
-    {
-      icon: Brain,
-      title: "Emerging Technologies",
-      skills: [
-        { name: "Artificial Intelligence", level: 60 },
-        { name: "Machine Learning", level: 55 },
-        { name: "Computer Vision", level: 50 },
-        { name: "IoT Development", level: 65 }
-      ]
-    },
-    {
-      icon: Smartphone,
-      title: "Tools & Others",
-      skills: [
-        { name: "VS Code", level: 90 },
-        { name: "Figma", level: 70 },
-        { name: "Postman", level: 75 },
-        { name: "Arduino", level: 65 }
+        { name: "MySQL", level: 65 }
       ]
     }
   ];
