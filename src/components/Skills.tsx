@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card';
-import { Code, Palette, Database, Cloud, Brain, Smartphone } from 'lucide-react';
+import { Code, Palette, Database, Coffee, FileCode, Paintbrush, Layers, Server } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -7,25 +7,25 @@ const Skills = () => {
       icon: Code,
       title: "Programming Languages",
       skills: [
-        { name: "Java", level: 75 },
-        { name: "HTML", level: 85 },
-        { name: "CSS", level: 80 }
+        { name: "Java", icon: Coffee },
+        { name: "HTML", icon: FileCode },
+        { name: "CSS", icon: Paintbrush }
       ]
     },
     {
       icon: Palette,
       title: "Frontend Technologies",
       skills: [
-        { name: "React.js", level: 65 },
-        { name: "UI/UX Design", level: 70 }
+        { name: "React.js", icon: Layers },
+        { name: "UI/UX Design", icon: Paintbrush }
       ]
     },
     {
       icon: Database,
       title: "Backend & Database",
       skills: [
-        { name: "Django", level: 70 },
-        { name: "MySQL", level: 65 }
+        { name: "Django", icon: Server },
+        { name: "MySQL", icon: Database }
       ]
     }
   ];
@@ -54,17 +54,11 @@ const Skills = () => {
 
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium text-foreground">{skill.name}</span>
-                      <span className="text-sm text-primary font-semibold">{skill.level}%</span>
+                  <div key={skillIndex} className="flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-primary/10 hover:border-primary/30 transition-colors">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <skill.icon className="text-primary" size={20} />
                     </div>
-                    <div className="skill-bar">
-                      <div 
-                        className="skill-progress transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
+                    <span className="font-medium text-foreground">{skill.name}</span>
                   </div>
                 ))}
               </div>
