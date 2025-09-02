@@ -33,7 +33,7 @@ const Achievements = () => {
     },
     {
       icon: Trophy,
-      title: "Project Recognition",
+      title: "Innovation Spotlight",
       description: "Received recognition for innovative project work in AI, IoT, and web development, showcasing practical application of theoretical knowledge.",
       category: "Innovation",
       highlight: "Multiple Projects"
