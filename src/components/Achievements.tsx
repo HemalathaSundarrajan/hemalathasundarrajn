@@ -34,7 +34,7 @@ const Achievements = () => {
     {
       icon: Trophy,
       title: "Innovation Spotlight",
-      description: "Secured Top Rank in Overall Academic Performance in 12th Standard, awarded by Tamil Nadu Private Educational Institution Teachers Association (TINPEITA), Namakkal. Won Third Prize in Paper Presentation on \"Detection of Parkinson's Disease Using Machine Learning\" at a National Level Technical Symposium, Sengunthar Engineering College.",
+      description: "Secured Top Rank in 12th Standard (TINPEITA, Namakkal) and won 3rd Prize for Paper Presentation on \"Detection of Parkinson's Disease Using ML\" at a National Level Symposium, Sengunthar Engineering College.",
       category: "Innovation",
       highlight: "Multiple Projects"
     },
