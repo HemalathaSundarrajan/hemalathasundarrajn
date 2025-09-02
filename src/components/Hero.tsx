@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
-import profileImage from '@/assets/hemalatha-profile.jpg';
+const profileImageUrl = '/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.png';
 
 const Hero = () => {
   return (
@@ -64,7 +64,7 @@ const Hero = () => {
             <div className="relative animate-float">
               <div className="w-80 h-80 rounded-full overflow-hidden glass-card p-2 glow-button">
                 <img
-                  src={profileImage}
+                  src={profileImageUrl}
                   alt="Hemalatha S - Front-End Developer"
                   className="w-full h-full object-cover rounded-full"
                 />
