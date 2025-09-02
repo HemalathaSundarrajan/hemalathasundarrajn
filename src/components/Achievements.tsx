@@ -5,7 +5,7 @@ const Achievements = () => {
   const achievements = [
     {
       icon: Code,
-      title: "DAKSH AI Hackathon",
+      title: "Innovation Spotlight",
       description: "Participated in the DAKSH AI Hackathon at SASTRA University, contributing to innovative AI-based solutions and collaborating effectively in a competitive environment.",
       category: "Competition",
       highlight: "SASTRA University"
