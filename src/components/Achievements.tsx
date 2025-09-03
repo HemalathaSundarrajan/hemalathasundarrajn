@@ -15,11 +15,11 @@ const Achievements = () => {
       imageUrl: "/lovable-uploads/0afc14e0-73eb-4758-a047-3ace47787734.png"
     },
     {
-      title: "Paper Presentation Certificate 2", 
-      description: "Technical Symposium Participation",
-      organization: "Various Technical Institutions",
-      achievement: "Active Participation",
-      imageUrl: "/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.png"
+      title: "TECHNO FEST Certificate", 
+      description: "Features of AI - National Level Students Technical Symposium",
+      organization: "Erode Sengunthar Engineering College",
+      achievement: "Participation",
+      imageUrl: "/lovable-uploads/1c6dfb8f-9163-4953-88e0-383c76c52891.png"
     }
   ];
 
