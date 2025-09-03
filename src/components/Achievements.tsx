@@ -1,7 +1,28 @@
 import { Card } from '@/components/ui/card';
-import { Trophy, Users, Presentation, Award, Code, Zap } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Trophy, Users, Presentation, Award, Code, Zap, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 
 const Achievements = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const certificates = [
+    {
+      title: "Paper Presentation Certificate 1",
+      description: "Detection of Parkinson's Disease Using ML - National Level Symposium",
+      organization: "Sengunthar Engineering College",
+      achievement: "3rd Prize",
+      imageUrl: "/lovable-uploads/0afc14e0-73eb-4758-a047-3ace47787734.png"
+    },
+    {
+      title: "Paper Presentation Certificate 2", 
+      description: "Technical Symposium Participation",
+      organization: "Various Technical Institutions",
+      achievement: "Active Participation",
+      imageUrl: "/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.png"
+    }
+  ];
+
   const achievements = [
     {
       icon: Code,
@@ -62,7 +83,11 @@ const Achievements = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
-            <Card key={index} className="project-card group p-6 h-full">
+            <Card 
+              key={index} 
+              className={`project-card group p-6 h-full ${achievement.title === "Paper Presentations" ? "cursor-pointer" : ""}`}
+              onClick={achievement.title === "Paper Presentations" ? () => setIsModalOpen(true) : undefined}
+            >
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -76,8 +101,11 @@ const Achievements = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
                     {achievement.title}
+                    {achievement.title === "Paper Presentations" && (
+                      <ExternalLink size={16} className="opacity-60" />
+                    )}
                   </h3>
                   <p className="text-foreground/80 text-sm leading-relaxed mb-4">
                     {achievement.description}
@@ -97,6 +125,42 @@ const Achievements = () => {
             </Card>
           ))}
         </div>
+
+        {/* Certificates Modal */}
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold mb-4">
+                Paper Presentation Certificates
+              </DialogTitle>
+            </DialogHeader>
+            <div className="grid md:grid-cols-2 gap-6">
+              {certificates.map((cert, index) => (
+                <Card key={index} className="p-6">
+                  <div className="space-y-4">
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{cert.description}</p>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="font-medium text-primary">{cert.organization}</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded-full">
+                          {cert.achievement}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Leadership Quote */}
         <div className="mt-16 text-center">
