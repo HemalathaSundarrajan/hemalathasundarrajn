@@ -109,11 +109,15 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* LinkedIn QR Code Placeholder */}
+            {/* LinkedIn QR Code */}
             <Card className="glass-card p-6 text-center">
               <h4 className="font-semibold mb-4">LinkedIn QR Code</h4>
-              <div className="w-32 h-32 mx-auto bg-primary/10 rounded-lg flex items-center justify-center">
-                <Linkedin className="text-primary" size={40} />
+              <div className="w-32 h-32 mx-auto rounded-lg overflow-hidden bg-white p-2">
+                <img
+                  src="/lovable-uploads/0afc14e0-73eb-4758-a047-3ace47787734.png"
+                  alt="LinkedIn QR Code"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 Scan to connect on LinkedIn
