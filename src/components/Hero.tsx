@@ -26,8 +26,8 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
              <a 
-  href="/HemalathaS-Resume.pdf" 
-  download="HemalathaS-Resume.pdf" 
+  href="/Hemalatha.S-Resume.pdf" 
+  download="Hemalatha.S-Resume.pdf" 
   target="_blank" 
   rel="noopener noreferrer"
 >
