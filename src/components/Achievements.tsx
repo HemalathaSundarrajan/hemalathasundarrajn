@@ -115,7 +115,7 @@ const Achievements = () => {
       description: "AIVOLUTION - AI Hackathon organized by DAKSH, SASTRA University",
       organization: "SASTRA University",
       achievement: "Participation",
-      imageUrl: "/lovable-uploads/ai-hackathon-cert.png",
+      imageUrl: "/lovable-uploads/ai-hackathon-cert.jpg",
       date: "07,08,09 March 2025"
     }
   ];
