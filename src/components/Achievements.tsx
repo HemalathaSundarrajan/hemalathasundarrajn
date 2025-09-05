@@ -8,10 +8,10 @@ const Achievements = () => {
 
   const certificates = [
     {
-      title: "TECHNO FEST Certificate", 
-      description: "Features of AI - National Level Students Technical Symposium",
+      title: "Detection of Parkinson Disease Using ML", 
+      description: "National Level Students Technical Symposium",
       organization: "Erode Sengunthar Engineering College",
-      achievement: "Participation",
+      achievement: "3rd Prize",
       imageUrl: "/lovable-uploads/1c6dfb8f-9163-4953-88e0-383c76c52891.png"
     }
   ];
