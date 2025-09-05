@@ -8,13 +8,6 @@ const Achievements = () => {
 
   const certificates = [
     {
-      title: "Paper Presentation Certificate 1",
-      description: "Detection of Parkinson's Disease Using ML - National Level Symposium",
-      organization: "Sengunthar Engineering College",
-      achievement: "3rd Prize",
-      imageUrl: "/lovable-uploads/0afc14e0-73eb-4758-a047-3ace47787734.png"
-    },
-    {
       title: "TECHNO FEST Certificate", 
       description: "Features of AI - National Level Students Technical Symposium",
       organization: "Erode Sengunthar Engineering College",
