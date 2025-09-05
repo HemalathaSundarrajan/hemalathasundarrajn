@@ -25,12 +25,18 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <a href="https://drive.google.com/file/d/1SdMYDvSbLlF8N1e75j1CS5jaYQiwbI9L/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <Button variant="neon" size="lg" className="group">
-                  <Download className="mr-2 group-hover:animate-bounce" size={20} />
-                  Download Resume
-                </Button>
-              </a>
+             <a 
+  href="/HemalathaS-Resume.pdf" 
+  download="HemalathaS-Resume.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <Button variant="neon" size="lg" className="group">
+    <Download className="mr-2 group-hover:animate-bounce" size={20} />
+    Download Resume
+  </Button>
+</a>
+
               <Button variant="glass" size="lg">
                 View My Work
               </Button>
