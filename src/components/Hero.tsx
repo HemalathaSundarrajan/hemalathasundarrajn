@@ -20,23 +20,21 @@ const Hero = () => {
               Aspiring Front-End Developer
             </h2>
             <p className="text-xl text-foreground/80 mb-8 max-w-2xl">
-              Crafting elegant web experiences with creativity and code. 
+              Crafting  web experiences with creativity and code. 
               Passionate about building innovative solutions that make a difference.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
             
 <a
-  href="https://drive.google.com/file/d/1lQ2EQ9wzFOhTMfx3H-TXtxB3c4VptEb1/view?usp=sharing"
-  target="_blank"
-  rel="noopener noreferrer"
+  href="/HemalathaS-Resume.pdf"
+  download="HemalathaS-Resume.pdf"
 >
   <Button variant="neon" size="lg" className="group">
     <Download className="mr-2 group-hover:animate-bounce" size={20} />
     Download Resume
   </Button>
 </a>
-
 
 
 
