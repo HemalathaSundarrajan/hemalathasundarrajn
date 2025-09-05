@@ -6,6 +6,8 @@ import { useState } from 'react';
 const Achievements = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAcademicModalOpen, setIsAcademicModalOpen] = useState(false);
+  const [isInnovationModalOpen, setIsInnovationModalOpen] = useState(false);
+  const [isHackathonModalOpen, setIsHackathonModalOpen] = useState(false);
 
   const certificates = [
     {
@@ -14,6 +16,34 @@ const Achievements = () => {
       organization: "Erode Sengunthar Engineering College",
       achievement: "3rd Prize",
       imageUrl: "/lovable-uploads/1c6dfb8f-9163-4953-88e0-383c76c52891.png"
+    },
+    {
+      title: "BRAHMASTRA 23",
+      description: "Paper Presentation - PAPERIQ THEIDIJI BRAINAZA",
+      organization: "Chettinad College of Engineering & Technology",
+      achievement: "Participation",
+      imageUrl: "/lovable-uploads/brahmastra-cert.png"
+    },
+    {
+      title: "AMPERE2K25",
+      description: "Paper Presentation, Poster Presentation, Technical Quiz",
+      organization: "Selvam College of Technology",
+      achievement: "Participation",
+      imageUrl: "/lovable-uploads/ampere2k25-cert.png"
+    },
+    {
+      title: "MXCEL-2K24",
+      description: "Paper Presentation CAD/CAM SISTER",
+      organization: "Kongu Engineering College",
+      achievement: "Participation",
+      imageUrl: "/lovable-uploads/mxcel-cert.png"
+    },
+    {
+      title: "MEDICNIK 2K25",
+      description: "Paper Presentation Technical Quiz - Med & Tech Expo",
+      organization: "Karpagam Academy of Higher Education",
+      achievement: "Participation",
+      imageUrl: "/lovable-uploads/medicnik-cert.png"
     }
   ];
 
@@ -62,6 +92,34 @@ const Achievements = () => {
     }
   ];
 
+  const innovationCertificates = [
+    {
+      title: "Top Rank in Overall Academic Performance",
+      description: "XII Standard",
+      organization: "TNPEITA, Namakkal District",
+      achievement: "Top Rank",
+      imageUrl: "/lovable-uploads/top-rank-cert.png"
+    },
+    {
+      title: "Detection of Parkinson Disease Using ML",
+      description: "National Level Students Technical Symposium TECHNO FEST",
+      organization: "Erode Sengunthar Engineering College",
+      achievement: "3rd Prize",
+      imageUrl: "/lovable-uploads/techno-fest-cert.png"
+    }
+  ];
+
+  const hackathonCertificates = [
+    {
+      title: "AI Hackathon Participation",
+      description: "AIVOLUTION - AI Hackathon organized by DAKSH, SASTRA University",
+      organization: "SASTRA University",
+      achievement: "Participation",
+      imageUrl: "/lovable-uploads/ai-hackathon-cert.png",
+      date: "07,08,09 March 2025"
+    }
+  ];
+
   const achievements = [
     {
       icon: Code,
@@ -94,9 +152,9 @@ const Achievements = () => {
     {
       icon: Trophy,
       title: "Innovation Spotlight",
-      description: "Secured Top Rank in 12th Standard (TINPEITA, Namakkal) and won 3rd Prize for Paper Presentation on \"Detection of Parkinson's Disease Using ML\" at a National Level Symposium, Sengunthar Engineering College.",
+      description: "Secured Top Rank in 12th Standard (TINPEITA, Namakkal) and demonstrated excellence in Engineering with project presentations and technical achievements.",
       category: "Innovation",
-      highlight: "Multiple Projects"
+      highlight: "Academic & Technical Excellence"
     },
     {
       icon: Zap,
@@ -124,10 +182,12 @@ const Achievements = () => {
           {achievements.map((achievement, index) => (
             <Card 
               key={index} 
-              className={`project-card group p-6 h-full ${(achievement.title === "Paper Presentations" || achievement.title === "Academic Excellence") ? "cursor-pointer" : ""}`}
+              className={`project-card group p-6 h-full ${(achievement.title === "Paper Presentations" || achievement.title === "Academic Excellence" || achievement.title === "Innovation Spotlight" || achievement.title === "DAKSH'S AI Hackathon") ? "cursor-pointer" : ""}`}
               onClick={
                 achievement.title === "Paper Presentations" ? () => setIsModalOpen(true) :
-                achievement.title === "Academic Excellence" ? () => setIsAcademicModalOpen(true) : 
+                achievement.title === "Academic Excellence" ? () => setIsAcademicModalOpen(true) :
+                achievement.title === "Innovation Spotlight" ? () => setIsInnovationModalOpen(true) :
+                achievement.title === "DAKSH'S AI Hackathon" ? () => setIsHackathonModalOpen(true) :
                 undefined
               }
             >
@@ -146,7 +206,7 @@ const Achievements = () => {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
                     {achievement.title}
-                    {(achievement.title === "Paper Presentations" || achievement.title === "Academic Excellence") && (
+                    {(achievement.title === "Paper Presentations" || achievement.title === "Academic Excellence" || achievement.title === "Innovation Spotlight" || achievement.title === "DAKSH'S AI Hackathon") && (
                       <ExternalLink size={16} className="opacity-60" />
                     )}
                   </h3>
@@ -235,6 +295,89 @@ const Achievements = () => {
                         <span className="px-2 py-1 bg-primary/10 text-primary rounded-full">
                           {cert.year}
                         </span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Innovation Spotlight Modal */}
+        <Dialog open={isInnovationModalOpen} onOpenChange={setIsInnovationModalOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold mb-4">
+                Innovation Spotlight
+              </DialogTitle>
+              <p className="text-muted-foreground">
+                Academic excellence and innovative achievements in engineering and technology
+              </p>
+            </DialogHeader>
+            <div className="grid md:grid-cols-2 gap-6">
+              {innovationCertificates.map((cert, index) => (
+                <Card key={index} className="p-6">
+                  <div className="space-y-4">
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{cert.description}</p>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="font-medium text-primary">{cert.organization}</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded-full">
+                          {cert.achievement}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* AI Hackathon Modal */}
+        <Dialog open={isHackathonModalOpen} onOpenChange={setIsHackathonModalOpen}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold mb-4">
+                DAKSH'S AI Hackathon
+              </DialogTitle>
+              <p className="text-muted-foreground">
+                Participation in AI innovation and technology competition
+              </p>
+            </DialogHeader>
+            <div className="grid gap-6">
+              {hackathonCertificates.map((cert, index) => (
+                <Card key={index} className="p-6">
+                  <div className="space-y-4">
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{cert.description}</p>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="font-medium text-primary">{cert.organization}</span>
+                        <div className="flex gap-2">
+                          <span className="px-2 py-1 bg-secondary/10 text-secondary-foreground rounded-full">
+                            {cert.date}
+                          </span>
+                          <span className="px-2 py-1 bg-primary/10 text-primary rounded-full">
+                            {cert.achievement}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
