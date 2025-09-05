@@ -59,19 +59,38 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Profile Image */}
-          <div className="flex-1 flex justify-center">
+          {/* Profile Image with Enhanced Decorative Elements */}
+          <div className="flex-1 flex justify-center relative">
             <div className="relative animate-float">
-              <div className="w-80 h-80 rounded-full overflow-hidden glass-card p-2 glow-button">
+              {/* Main profile image */}
+              <div className="w-96 h-96 rounded-full overflow-hidden glass-card p-2 glow-button relative z-10">
                 <img
                   src={profileImageUrl}
                   alt="Hemalatha S - Front-End Developer"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              {/* Floating decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse opacity-60" />
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary-glow rounded-full animate-pulse opacity-40" />
+              
+              {/* Enhanced floating decorative elements */}
+              <div className="absolute -top-6 -right-6 w-10 h-10 bg-primary rounded-full animate-pulse opacity-60" />
+              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-secondary-glow rounded-full animate-pulse opacity-40" />
+              <div className="absolute top-1/4 -right-12 w-4 h-4 bg-accent rounded-full animate-ping opacity-30" />
+              <div className="absolute bottom-1/4 -left-12 w-6 h-6 bg-primary/30 rounded-full animate-bounce opacity-50" />
+              
+              {/* Code-themed floating elements */}
+              <div className="absolute -top-8 left-1/3 text-primary/40 animate-pulse">
+                <div className="text-2xl font-mono">&lt;/&gt;</div>
+              </div>
+              <div className="absolute -bottom-8 right-1/3 text-secondary-glow/40 animate-pulse delay-1000">
+                <div className="text-xl font-mono">{}</div>
+              </div>
+            </div>
+            
+            {/* Background decorative circles */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-10 right-10 w-32 h-32 bg-primary/5 rounded-full animate-pulse" />
+              <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary-glow/5 rounded-full animate-pulse delay-500" />
+              <div className="absolute top-1/2 right-20 w-16 h-16 bg-accent/10 rounded-full animate-pulse delay-1000" />
             </div>
           </div>
         </div>
