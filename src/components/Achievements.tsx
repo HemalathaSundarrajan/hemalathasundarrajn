@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 const Achievements = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAcademicModalOpen, setIsAcademicModalOpen] = useState(false);
 
   const certificates = [
     {
@@ -13,6 +14,51 @@ const Achievements = () => {
       organization: "Erode Sengunthar Engineering College",
       achievement: "3rd Prize",
       imageUrl: "/lovable-uploads/1c6dfb8f-9163-4953-88e0-383c76c52891.png"
+    }
+  ];
+
+  const academicCertificates = [
+    {
+      title: "Certificate of Merit - First Semester",
+      description: "Class Topper I/II/III - Computer Science and Engineering",
+      organization: "Kongunadu College of Engineering & Technology",
+      year: "2022-2023",
+      imageUrl: "/lovable-uploads/aad8b6b1-ac38-4850-96ec-72898f28d0c3.png"
+    },
+    {
+      title: "Certificate of Merit - Second Semester", 
+      description: "Class Topper I/II/III - Computer Science and Engineering",
+      organization: "Kongunadu College of Engineering & Technology",
+      year: "2022-2023",
+      imageUrl: "/lovable-uploads/e44c71a1-e008-4fa6-b8be-e8a072f65846.png"
+    },
+    {
+      title: "Certificate of Merit - Third Semester",
+      description: "Class Topper I/II/III - Computer Science and Engineering", 
+      organization: "Kongunadu College of Engineering & Technology",
+      year: "2023-2024",
+      imageUrl: "/lovable-uploads/926e0ade-bf7d-47cb-82f1-7499d703e677.png"
+    },
+    {
+      title: "Certificate of Merit - Fourth Semester",
+      description: "Class Topper I/II/III - Computer Science and Engineering",
+      organization: "Kongunadu College of Engineering & Technology", 
+      year: "2023-2024",
+      imageUrl: "/lovable-uploads/309a019d-afdd-4d94-b134-c877db33c53b.png"
+    },
+    {
+      title: "Certificate of Merit - Fifth Semester",
+      description: "Class Topper I/II/III - Computer Science and Engineering",
+      organization: "Kongunadu College of Engineering & Technology",
+      year: "2024-2025", 
+      imageUrl: "/lovable-uploads/0101e068-57c7-4fad-ad4d-44aa25e3f39e.png"
+    },
+    {
+      title: "Certificate of Merit - Sixth Semester",
+      description: "Class Topper I/II/III - Computer Science and Engineering",
+      organization: "Kongunadu College of Engineering & Technology",
+      year: "2024-2025",
+      imageUrl: "/lovable-uploads/f4162ab4-d508-427d-98fd-7a2dae74a157.png"
     }
   ];
 
@@ -78,8 +124,12 @@ const Achievements = () => {
           {achievements.map((achievement, index) => (
             <Card 
               key={index} 
-              className={`project-card group p-6 h-full ${achievement.title === "Paper Presentations" ? "cursor-pointer" : ""}`}
-              onClick={achievement.title === "Paper Presentations" ? () => setIsModalOpen(true) : undefined}
+              className={`project-card group p-6 h-full ${(achievement.title === "Paper Presentations" || achievement.title === "Academic Excellence") ? "cursor-pointer" : ""}`}
+              onClick={
+                achievement.title === "Paper Presentations" ? () => setIsModalOpen(true) :
+                achievement.title === "Academic Excellence" ? () => setIsAcademicModalOpen(true) : 
+                undefined
+              }
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
@@ -96,7 +146,7 @@ const Achievements = () => {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
                     {achievement.title}
-                    {achievement.title === "Paper Presentations" && (
+                    {(achievement.title === "Paper Presentations" || achievement.title === "Academic Excellence") && (
                       <ExternalLink size={16} className="opacity-60" />
                     )}
                   </h3>
@@ -145,6 +195,45 @@ const Achievements = () => {
                         <span className="font-medium text-primary">{cert.organization}</span>
                         <span className="px-2 py-1 bg-primary/10 text-primary rounded-full">
                           {cert.achievement}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Academic Excellence Modal */}
+        <Dialog open={isAcademicModalOpen} onOpenChange={setIsAcademicModalOpen}>
+          <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold mb-4">
+                Academic Excellence - Continuous Rank Holder
+              </DialogTitle>
+              <p className="text-muted-foreground">
+                Consistent academic performance across six semesters with Class Topper achievements
+              </p>
+            </DialogHeader>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {academicCertificates.map((cert, index) => (
+                <Card key={index} className="p-4">
+                  <div className="space-y-4">
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold mb-2">{cert.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-2">{cert.description}</p>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="font-medium text-primary">{cert.organization}</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded-full">
+                          {cert.year}
                         </span>
                       </div>
                     </div>
