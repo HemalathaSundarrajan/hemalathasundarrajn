@@ -1,8 +1,12 @@
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
+import { useState } from 'react';
 const profileImageUrl = '/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.png';
 
 const Hero = () => {
+  const [showResume, setShowResume] = useState(false);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative animated-bg">
       <div className="container mx-auto px-6 py-20">
@@ -25,18 +29,45 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-            
-<a
-  href="/HemalathaS-Resume.pdf"
-  download="HemalathaS-Resume.pdf"
->
-  <Button variant="neon" size="lg" className="group">
-    <Download className="mr-2 group-hover:animate-bounce" size={20} />
-    Download Resume
-  </Button>
-</a>
-
-
+              <Dialog open={showResume} onOpenChange={setShowResume}>
+                <DialogTrigger asChild>
+                  <Button variant="neon" size="lg" className="group">
+                    <Download className="mr-2 group-hover:animate-bounce" size={20} />
+                    View & Download Resume
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-center">Resume - Hemalatha S</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <a
+                        href="/HemalathaS-Resume.pdf"
+                        download="HemalathaS-Resume.pdf"
+                        className="inline-block"
+                      >
+                        <Button variant="neon" size="sm" className="mb-4">
+                          <Download className="mr-2" size={16} />
+                          Download PDF
+                        </Button>
+                      </a>
+                    </div>
+                    <div className="space-y-4">
+                      <img
+                        src="/resume-page-1.png"
+                        alt="Resume Page 1"
+                        className="w-full border rounded-lg shadow-lg"
+                      />
+                      <img
+                        src="/resume-page-2.png"
+                        alt="Resume Page 2"
+                        className="w-full border rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
 
               <Button variant="glass" size="lg">
                 View My Work
