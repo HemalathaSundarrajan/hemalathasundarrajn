@@ -1,7 +1,11 @@
 import { Card } from '@/components/ui/card';
-import { GraduationCap, Award, Briefcase, MapPin } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { GraduationCap, Award, Briefcase, MapPin, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 
 const About = () => {
+  const [selectedCert, setSelectedCert] = useState<string | null>(null);
+
   const highlights = [
     {
       icon: GraduationCap,
@@ -16,13 +20,21 @@ const About = () => {
       subtitle: "AWS Certified",
       description: "Cloud Practitioner",
       detail: "Amazon Web Services"
+    }
+  ];
+
+  const internships = [
+    {
+      title: "Full Stack Development",
+      company: "e-soft solutions", 
+      duration: "June 27 - July 12, 2024",
+      certificate: "/lovable-uploads/6d124923-d2ca-49f2-8c2b-7d7f4870cf4b.png"
     },
     {
-      icon: Briefcase,
-      title: "Experience",
-      subtitle: "Internships",
-      description: "Cloud Computing & Full Stack Development",
-      detail: "Multiple projects completed"
+      title: "Cloud Computing",
+      company: "iSquare Consulting Services LLP",
+      duration: "Feb 7 - Feb 20, 2024", 
+      certificate: "/lovable-uploads/b8ba5a14-904d-498e-98ca-b696cbd18043.png"
     }
   ];
 
@@ -83,6 +95,45 @@ const About = () => {
                 </div>
               </Card>
             ))}
+            
+            {/* Experience Section with Internship Certificates */}
+            <Card className="project-card p-6">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <Briefcase className="text-primary" size={24} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg mb-1">Experience</h3>
+                  <p className="text-primary font-medium mb-3">Internship Training</p>
+                  
+                  <div className="space-y-4">
+                    {internships.map((internship, index) => (
+                      <div key={index} className="border-l-2 border-primary/20 pl-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-medium text-foreground">{internship.title}</h4>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <button className="text-primary hover:text-primary/80 transition-colors">
+                                <ExternalLink size={16} />
+                              </button>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-4xl">
+                              <img 
+                                src={internship.certificate} 
+                                alt={`${internship.title} Certificate`}
+                                className="w-full h-auto rounded-lg"
+                              />
+                            </DialogContent>
+                          </Dialog>
+                        </div>
+                        <p className="text-foreground/80 text-sm mb-1">{internship.company}</p>
+                        <p className="text-muted-foreground text-xs">{internship.duration}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
