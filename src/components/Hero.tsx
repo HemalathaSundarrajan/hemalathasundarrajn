@@ -1,11 +1,20 @@
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
 import { useState } from 'react';
 const profileImageUrl = '/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.png';
 
 const Hero = () => {
   const [showResume, setShowResume] = useState(false);
+  const handleResumeClick = () => {
+    setShowResume(true);
+    const a = document.createElement('a');
+    a.href = '/HemalathaS-Resume.pdf';
+    a.download = 'HemalathaS-Resume.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative animated-bg">
@@ -29,41 +38,31 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <Button variant="neon" size="lg" className="group" onClick={handleResumeClick}>
+                <Download className="mr-2 group-hover:animate-bounce" size={20} />
+                View & Download Resume
+              </Button>
+
               <Dialog open={showResume} onOpenChange={setShowResume}>
-                <DialogTrigger asChild>
-                  <Button variant="neon" size="lg" className="group">
-                    <Download className="mr-2 group-hover:animate-bounce" size={20} />
-                    View & Download Resume
-                  </Button>
-                </DialogTrigger>
                 <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle className="text-center">Resume - Hemalatha S</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-4">
                     <div className="text-center">
-                      <a
-                        href="/HemalathaS-Resume.pdf"
-                        download="HemalathaS-Resume.pdf"
-                        className="inline-block"
-                      >
+                      <a href="/HemalathaS-Resume.pdf" download="HemalathaS-Resume.pdf" className="inline-block">
                         <Button variant="neon" size="sm" className="mb-4">
                           <Download className="mr-2" size={16} />
                           Download PDF
                         </Button>
                       </a>
                     </div>
-                    <div className="space-y-4">
-                      <img
-                        src="/resume-page-1.png"
-                        alt="Resume Page 1"
-                        className="w-full border rounded-lg shadow-lg"
-                      />
-                      <img
-                        src="/resume-page-2.png"
-                        alt="Resume Page 2"
-                        className="w-full border rounded-lg shadow-lg"
-                      />
+                    <div className="w-full">
+                      <iframe
+                        src="/HemalathaS-Resume.pdf#view=FitH"
+                        title="Resume PDF"
+                        className="w-full h-[75vh] rounded-lg border"
+                      ></iframe>
                     </div>
                   </div>
                 </DialogContent>
