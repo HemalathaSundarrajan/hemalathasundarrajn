@@ -19,7 +19,8 @@ const About = () => {
       title: "Certification", 
       subtitle: "AWS Certified",
       description: "Cloud Practitioner",
-      detail: "Amazon Web Services"
+      detail: "Amazon Web Services",
+      certificate: "/lovable-uploads/26f0d7bb-46dd-477e-b608-47233fc29540.png"
     }
   ];
 
@@ -87,7 +88,25 @@ const About = () => {
                     <item.icon className="text-primary" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-semibold text-lg">{item.title}</h3>
+                      {item.certificate && (
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="text-primary hover:text-primary/80 transition-colors">
+                              <ExternalLink size={16} />
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-4xl">
+                            <img 
+                              src={item.certificate} 
+                              alt={`${item.title} Certificate`}
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </DialogContent>
+                        </Dialog>
+                      )}
+                    </div>
                     <p className="text-primary font-medium mb-1">{item.subtitle}</p>
                     <p className="text-foreground/80 mb-2">{item.description}</p>
                     <p className="text-sm text-muted-foreground">{item.detail}</p>
