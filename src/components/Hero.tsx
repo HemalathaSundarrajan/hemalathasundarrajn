@@ -6,15 +6,6 @@ const profileImageUrl = '/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.p
 
 const Hero = () => {
   const [showResume, setShowResume] = useState(false);
-  const handleResumeClick = () => {
-    setShowResume(true);
-    const a = document.createElement('a');
-    a.href = '/HemalathaS-Resume.pdf';
-    a.download = 'HemalathaS-Resume.pdf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative animated-bg">
@@ -38,9 +29,15 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button variant="neon" size="lg" className="group" onClick={handleResumeClick}>
-                <Download className="mr-2 group-hover:animate-bounce" size={20} />
-                View & Download Resume
+              <a href="/HemalathaS-Resume.pdf" download="HemalathaS-Resume.pdf" className="group">
+                <Button variant="neon" size="lg" className="group">
+                  <Download className="mr-2 group-hover:animate-bounce" size={20} />
+                  Download Resume
+                </Button>
+              </a>
+
+              <Button variant="glass" size="lg" onClick={() => setShowResume(true)}>
+                View Resume
               </Button>
 
               <Dialog open={showResume} onOpenChange={setShowResume}>
