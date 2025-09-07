@@ -52,13 +52,6 @@ const Hero = () => {
                         </Button>
                       </a>
                     </div>
-                    <div className="w-full">
-                      <iframe
-                        src="/HemalathaS-Resume.pdf#view=FitH"
-                        title="Resume PDF"
-                        className="w-full h-[75vh] rounded-lg border"
-                      ></iframe>
-                    </div>
                   </div>
                 </DialogContent>
               </Dialog>
