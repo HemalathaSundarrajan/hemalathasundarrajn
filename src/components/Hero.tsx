@@ -29,16 +29,14 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <a href="/HemalathaS-Resume.pdf" download="HemalathaS-Resume.pdf" className="group">
-                <Button variant="neon" size="lg" className="group">
-                  <Download className="mr-2 group-hover:animate-bounce" size={20} />
-                  Download Resume
-                </Button>
-              </a>
-
-              <Button variant="glass" size="lg" onClick={() => setShowResume(true)}>
-                View Resume
-              </Button>
+              <Button
+  variant="glass"
+  size="lg"
+  className="bg-gradient-to-r from-sky-400 to-blue-500 text-white hover:from-sky-500 hover:to-blue-600"
+  onClick={() => setShowResume(true)}
+>
+  View and Download Resume
+</Button>
 
               <Dialog open={showResume} onOpenChange={setShowResume}>
                 <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
