@@ -52,22 +52,67 @@ const About = () => {
           </p>
         </div>
 
+        {/* Education Qualification Table */}
+        <div className="mb-12">
+          <div className="max-w-4xl mx-auto">
+            {/* Table Header */}
+            <div className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-t-lg">
+              <div className="p-4 text-center">
+                <h3 className="text-xl font-bold tracking-wider">EDUCATION QUALIFICATION</h3>
+              </div>
+            </div>
+            
+            {/* Table Content */}
+            <div className="bg-white border border-gray-200 rounded-b-lg overflow-hidden">
+              {/* Column Headers */}
+              <div className="grid grid-cols-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white">
+                <div className="p-4 text-center font-semibold border-r border-white/20">Course</div>
+                <div className="p-4 text-center font-semibold border-r border-white/20">Year</div>
+                <div className="p-4 text-center font-semibold border-r border-white/20">Institution Name</div>
+                <div className="p-4 text-center font-semibold">Percentage</div>
+              </div>
+              
+              {/* Table Rows */}
+              <div className="grid grid-cols-4 border-b border-gray-200">
+                <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium text-gray-900">B.E.,CSE</div>
+                <div className="p-4 text-center border-r border-gray-200 text-gray-900">2022 - 2026</div>
+                <div className="p-4 text-center border-r border-gray-200 text-gray-900">Kongunadu college of Engineering and Technology</div>
+                <div className="p-4 text-center text-gray-900">94.6% upto 6th sem</div>
+              </div>
+              
+              <div className="grid grid-cols-4 border-b border-gray-200">
+                <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium text-gray-900">HSC</div>
+                <div className="p-4 text-center border-r border-gray-200 text-gray-900">2022</div>
+                <div className="p-4 text-center border-r border-gray-200 text-gray-900">Bharathi Hr.sec School</div>
+                <div className="p-4 text-center text-gray-900">94.5%</div>
+              </div>
+              
+              <div className="grid grid-cols-4">
+                <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium text-gray-900">SSLC</div>
+                <div className="p-4 text-center border-r border-gray-200 text-gray-900">2020</div>
+                <div className="p-4 text-center border-r border-gray-200 text-gray-900">Bharathi Hr.sec School</div>
+                <div className="p-4 text-center text-gray-900">91%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6">
-            <p className="text-lg text-foreground/90 leading-relaxed">
+            <p className="text-lg text-foreground leading-relaxed">
               I'm Hemalatha S, an aspiring Front-End Developer currently pursuing my B.E in Computer Science 
               and Engineering at Kongunadu College of Engineering and Technology. With a CGPA of 9.4, 
               I've maintained academic excellence while actively exploring the world of web development.
             </p>
             
-            <p className="text-lg text-foreground/90 leading-relaxed">
+            <p className="text-lg text-foreground leading-relaxed">
               My journey in technology has been enriched by hands-on experience through internships in 
               Cloud Computing and Full Stack Development. I'm AWS Certified Cloud Practitioner and have 
               a strong foundation in Java, HTML, CSS, and JavaScript.
             </p>
 
-            <p className="text-lg text-foreground/90 leading-relaxed">
+            <p className="text-lg text-foreground leading-relaxed">
               I'm passionate about creating user-friendly interfaces and exploring emerging technologies 
               like AI and Machine Learning. My goal is to contribute to innovative projects that make 
               a positive impact on society.
@@ -76,51 +121,6 @@ const About = () => {
             <div className="flex items-center gap-2 text-primary">
               <MapPin size={20} />
               <span className="font-medium">Tamil Nadu, India</span>
-            </div>
-          </div>
-
-          {/* Education Qualification Table */}
-          <div className="lg:col-span-2 mb-12">
-            <div className="max-w-4xl mx-auto">
-              {/* Table Header */}
-              <div className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-t-lg">
-                <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold tracking-wider">EDUCATION QUALIFICATION</h3>
-                </div>
-              </div>
-              
-              {/* Table Content */}
-              <div className="bg-white border border-gray-200 rounded-b-lg overflow-hidden">
-                {/* Column Headers */}
-                <div className="grid grid-cols-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white">
-                  <div className="p-4 text-center font-semibold border-r border-white/20">Course</div>
-                  <div className="p-4 text-center font-semibold border-r border-white/20">Year</div>
-                  <div className="p-4 text-center font-semibold border-r border-white/20">Institution Name</div>
-                  <div className="p-4 text-center font-semibold">Percentage</div>
-                </div>
-                
-                {/* Table Rows */}
-                <div className="grid grid-cols-4 border-b border-gray-200">
-                  <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium">B.E.,CSE</div>
-                  <div className="p-4 text-center border-r border-gray-200">2022 - 2026</div>
-                  <div className="p-4 text-center border-r border-gray-200">Kongunadu college of Engineering and Technology</div>
-                  <div className="p-4 text-center">94.6% upto 6th sem</div>
-                </div>
-                
-                <div className="grid grid-cols-4 border-b border-gray-200">
-                  <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium">HSC</div>
-                  <div className="p-4 text-center border-r border-gray-200">2022</div>
-                  <div className="p-4 text-center border-r border-gray-200">Bharathi Hr.sec School</div>
-                  <div className="p-4 text-center">94.5%</div>
-                </div>
-                
-                <div className="grid grid-cols-4">
-                  <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium">SSLC</div>
-                  <div className="p-4 text-center border-r border-gray-200">2020</div>
-                  <div className="p-4 text-center border-r border-gray-200">Bharathi Hr.sec School</div>
-                  <div className="p-4 text-center">91%</div>
-                </div>
-              </div>
             </div>
           </div>
 
