@@ -79,6 +79,51 @@ const About = () => {
             </div>
           </div>
 
+          {/* Education Qualification Table */}
+          <div className="lg:col-span-2 mb-12">
+            <div className="max-w-4xl mx-auto">
+              {/* Table Header */}
+              <div className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-t-lg">
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold tracking-wider">EDUCATION QUALIFICATION</h3>
+                </div>
+              </div>
+              
+              {/* Table Content */}
+              <div className="bg-white border border-gray-200 rounded-b-lg overflow-hidden">
+                {/* Column Headers */}
+                <div className="grid grid-cols-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white">
+                  <div className="p-4 text-center font-semibold border-r border-white/20">Course</div>
+                  <div className="p-4 text-center font-semibold border-r border-white/20">Year</div>
+                  <div className="p-4 text-center font-semibold border-r border-white/20">Institution Name</div>
+                  <div className="p-4 text-center font-semibold">Percentage</div>
+                </div>
+                
+                {/* Table Rows */}
+                <div className="grid grid-cols-4 border-b border-gray-200">
+                  <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium">B.E.,CSE</div>
+                  <div className="p-4 text-center border-r border-gray-200">2022 - 2026</div>
+                  <div className="p-4 text-center border-r border-gray-200">Kongunadu college of Engineering and Technology</div>
+                  <div className="p-4 text-center">94.6% upto 6th sem</div>
+                </div>
+                
+                <div className="grid grid-cols-4 border-b border-gray-200">
+                  <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium">HSC</div>
+                  <div className="p-4 text-center border-r border-gray-200">2022</div>
+                  <div className="p-4 text-center border-r border-gray-200">Bharathi Hr.sec School</div>
+                  <div className="p-4 text-center">94.5%</div>
+                </div>
+                
+                <div className="grid grid-cols-4">
+                  <div className="p-4 text-center border-r border-gray-200 bg-gray-50 font-medium">SSLC</div>
+                  <div className="p-4 text-center border-r border-gray-200">2020</div>
+                  <div className="p-4 text-center border-r border-gray-200">Bharathi Hr.sec School</div>
+                  <div className="p-4 text-center">91%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Highlight Cards */}
           <div className="space-y-6">
             {highlights.map((item, index) => (
