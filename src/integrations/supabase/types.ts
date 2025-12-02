@@ -16,19 +16,22 @@ export type Database = {
     Tables: {
       feedback: {
         Row: {
-          content: string | null
-          created_at: string
-          id: number
+          email_id: string | null
+          message: string | null
+          subject: string | null
+          your_name: string | null
         }
         Insert: {
-          content?: string | null
-          created_at?: string
-          id?: number
+          email_id?: string | null
+          message?: string | null
+          subject?: string | null
+          your_name?: string | null
         }
         Update: {
-          content?: string | null
-          created_at?: string
-          id?: number
+          email_id?: string | null
+          message?: string | null
+          subject?: string | null
+          your_name?: string | null
         }
         Relationships: []
       }
