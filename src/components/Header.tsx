@@ -23,6 +23,25 @@ const Header = () => {
     { href: '#contact', label: 'Contact' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const offset = 80; // Header height offset
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -40,6 +59,7 @@ const Header = () => {
             <a
               key={item.href}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
             >
               {item.label}
@@ -66,8 +86,8 @@ const Header = () => {
                 <a
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>

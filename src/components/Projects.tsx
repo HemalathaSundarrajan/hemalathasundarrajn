@@ -1,8 +1,11 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Brain, Vote, Eye } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   const projects = [
     {
       icon: Brain,
@@ -31,7 +34,13 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section 
+      id="projects" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-20 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">

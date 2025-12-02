@@ -2,12 +2,14 @@ import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Trophy, Users, Presentation, Award, Code, Zap, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Achievements = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAcademicModalOpen, setIsAcademicModalOpen] = useState(false);
   const [isInnovationModalOpen, setIsInnovationModalOpen] = useState(false);
   const [isHackathonModalOpen, setIsHackathonModalOpen] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   const certificates = [
     {
@@ -166,7 +168,13 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-20 bg-background-secondary/30">
+    <section 
+      id="achievements" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-20 bg-background-secondary/30 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">

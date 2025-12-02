@@ -2,13 +2,21 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const profileImageUrl = '/lovable-uploads/5f6849fb-fa8b-4905-b5c2-5559b49d5fc4.png';
 
 const Hero = () => {
   const [showResume, setShowResume] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative animated-bg">
+    <section 
+      id="home" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`min-h-screen flex items-center justify-center relative animated-bg transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="container mx-auto px-6 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           
